@@ -1,0 +1,9 @@
+_target_: pype.Pipeline
+stages:
+    - _target_: pype.Stage
+      name: "examples:logger"
+      strategy:
+        _target_: examples.logger.LoggerStrategy
+      commands:
+        - _target_: examples.logger.Echo
+          log_level: DEBUG
