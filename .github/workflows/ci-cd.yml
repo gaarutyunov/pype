@@ -18,6 +18,8 @@ jobs:
           python-version: 3.12
           poetry-version: 1.8.3
       - name: Run tests
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           poetry run pytest
       - name: Build
