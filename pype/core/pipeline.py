@@ -6,6 +6,7 @@ from pype.core.stage import Stage
 
 class Pipeline:
     """Entrypoint for the pipeline to be executed"""
+
     def __init__(self, stages: list[Stage]):
         """
         :param stages: list of stages to be run inside pipeline

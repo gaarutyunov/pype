@@ -6,6 +6,7 @@ from pype.core.strategy import Strategy
 
 class Stage:
     """A list of commands to be handled by a Strategy one by one"""
+
     def __init__(self, name: str, strategy: Strategy, commands: list[Command]):
         """
         :param name: Name of the stage

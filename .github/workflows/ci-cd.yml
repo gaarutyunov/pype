@@ -1,0 +1,23 @@
+name: CI/CD
+
+on:
+  push:
+
+jobs:
+  build:
+    name: Test and Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+      - name: "Setup Python, Poetry and Dependencies"
+        uses: packetcoders/action-setup-cache-python-poetry@main
+        with:
+          python-version: 3.12
+          poetry-version: 1.8
+      - name: Run tests
+        run: |
+          poetry run pytest
+      - name: Build
+        run: |
+          poetry build

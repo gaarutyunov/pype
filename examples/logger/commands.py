@@ -2,6 +2,7 @@ import logging
 
 from pype import Command
 
+
 class Echo(Command):
     logger: logging.Logger | None = None
 

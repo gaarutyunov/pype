@@ -16,4 +16,9 @@ class GitlabAdapter:
         self.client = Gitlab(url, token)
 
     def download(self, repository: str, filename: str, ref: str) -> io.TextIOBase:
-        return io.StringIO(self.client.projects.get(repository).files.get(filename, ref=ref).decode().decode("utf-8"))
+        return io.StringIO(
+            self.client.projects.get(repository)
+            .files.get(filename, ref=ref)
+            .decode()
+            .decode("utf-8")
+        )

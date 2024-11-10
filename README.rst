@@ -70,6 +70,14 @@ It can be a local file or a file stored somewhere, e.g. git repository.
 Running the Pipeline
 --------------------
 
-If the pipeline configuration is stored locally, run `pype --local config.yml`.
+If the pipeline configuration is stored locally, run:
 
-If it is stored in a repository, run `pype --source github --repository gaarutyunov/pype --filename examples/config.yml --ref main`.
+.. code:: bash
+
+    pype --local config.yml
+
+If it is stored in a repository, run:
+
+.. code:: bash
+
+    pype --source github --repository gaarutyunov/pype --file examples/config.yml --ref main

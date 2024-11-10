@@ -1,5 +1,6 @@
 class Command:
     """Command to be executed"""
+
     def __init__(self, name: str):
         """
         :param name: name of the command (is used to get method from Strategy)

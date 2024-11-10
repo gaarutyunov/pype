@@ -4,6 +4,9 @@ from typing import Any
 import click
 import yaml
 
+import pype.gitlab  # noqa: import for side effects
+import pype.github  # noqa: import for side effects
+
 from pype import Pipeline
 from pype.registry import REGISTRY
 from pype.vcs import get_factory, RepositoryFileClient
@@ -11,7 +14,9 @@ from pype.vcs import get_factory, RepositoryFileClient
 
 @click.command()
 @click.option("-s", "--source", help="Configuration remote source")
-@click.option("-l", "--local", type=click.File(lazy=True), help="Path to local configuration file")
+@click.option(
+    "-l", "--local", type=click.File(lazy=True), help="Path to local configuration file"
+)
 @click.option("-p", "--repository", type=str, help="Repository full name")
 @click.option("-r", "--ref", type=str, help="Reference (branch or tag)")
 @click.option("-f", "--file", type=str, help="Config file name")
